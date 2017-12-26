@@ -1,21 +1,30 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="en-US">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title>OGP tags generator</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://cdn.jsdelivr.net/npm/bulma" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bulma@0.6.1/css/bulma.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+        <link href="/css/gen.css" rel="stylesheet">
     </head>
     <body>
-        
+        <section class="hero is-bold is-dark">
+            <div class="hero-body">
+                <div class="container">
+                    <h1 class="title">Open Graph Generator</h1>
+                    <h2 class="subtitle">Please enter some text</h1>
+                </div>
+            </div>
+        </section>
         <script>
          var app = new Vue({
              el: "#app",
              data: {
-                 title: "Enter your title here",
-                 desc: "Enter your description here"
+                 title: "",
+                 desc: ""
              }
          })
         </script>
