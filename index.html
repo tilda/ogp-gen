@@ -9,16 +9,38 @@
         <link href="https://cdn.jsdelivr.net/npm/bulma@0.6.1/css/bulma.min.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
         <link href="/css/gen.css" rel="stylesheet">
+        <meta property="og:title" content="Open Graph Generator" />
+	<meta property="og:description" content="Basic generator for OpenGraph" />
     </head>
     <body>
-        <section class="hero is-bold is-dark">
-            <div class="hero-body">
-                <div class="container">
-                    <h1 class="title">Open Graph Generator</h1>
-                    <h2 class="subtitle">Please enter some text</h1>
+        <div id="app">
+            <section class="hero is-bold is-dark is-fullheight">
+                <div class="hero-body">
+                    <div class="container">
+                        <h1 class="title">Open Graph Generator</h1>
+                        <transition name="slide-fade">
+                            <h2 class="subtitle" v-if="title && desc">Here's your Open Graph code!</h2>
+                        </transition>
+                        <h2 class="subtitle" v-if="title != '' && desc == ''">Needs more description.</h2>
+                        <h2 class="subtitle" v-else-if="desc != '' && title == ''">How 'bout a bit of title?</h2>
+                        <h2 class="subtitle" v-else-if="desc == '' && title == ''">Enter some text and watch magic happen</h2>
+                        <div class="field">
+                                <p>Title</p>
+                                <input class="input" type="text" v-model="title">
+                                <br/>
+                                <p>Description</p>
+                                <input class="input" type="text" v-model="desc">
+                        </div>
+                        <p>Results</p>
+                        <pre><code><p v-if="title && desc">
+                            &lt;meta property="og:title" content="{{ title }}" />
+                            &lt;meta property="og:description" content="{{ desc }}" />
+                        </code></pre></p>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
         <script>
          var app = new Vue({
              el: "#app",
@@ -28,6 +50,5 @@
              }
          })
         </script>
-        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     </body>
 </html>
