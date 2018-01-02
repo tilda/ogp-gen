@@ -1,0 +1,21 @@
+/* ogp-gen (c) 2017 tilda.
+ * MIT License
+ * All rights reserved.
+ */
+
+/* Fonts! Fonts! Fonts! Fuck! */
+/* Also, we don't give a fuck about browser support */
+/* Doesn't load correctly? I don't know? Stop using Shitternet Exploder 9 maybe? */
+body { font-family: 'Roboto Mono' !important;color: white !important; }
+
+/* From vuejs docs */
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+.slide-fade-leave-active {
+  transition: all .66s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to {
+  transform: translateX(10px);
+  opacity: 0;
+}
